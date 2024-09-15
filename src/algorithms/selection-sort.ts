@@ -7,9 +7,11 @@ export const selectionSort = <T extends StringOrNumber>(arr: T[]): T[] => {
 
         for (let j = i + 1; j < arr.length; j++) {
             if (isBigger<T>(arr[minIndex], arr[j])) {
-                swap<T>(arr, j, minIndex)
+                minIndex = j
             }
         }
+
+        swap<T>(arr, i, minIndex)
     }
 
     return arr
